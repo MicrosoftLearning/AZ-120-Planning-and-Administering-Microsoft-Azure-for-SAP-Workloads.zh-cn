@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c27125346fb9a112a60110a1f23bc3357eea1d3f
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
+ms.openlocfilehash: f5fa14f0e3302e6c48c58f00c7a4c3043776c4a0
+ms.sourcegitcommit: 30dae3c49fe96a790479d08844a71fcb7851aa46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857521"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "139867891"
 ---
 # <a name="az-120-module-4-deploy-sap-on-azure"></a>AZ 120 模块 4：部署 Azure 上的 SAP
 # <a name="lab-3a-implement-sap-architecture-on-azure-vms-running-linux"></a>实验室 3a：在运行 Linux 的 Azure VM 上实施 SAP 体系结构
@@ -98,7 +98,7 @@ ms.locfileid: "137857521"
     az network vnet subnet list --resource-group $RESOURCE_GROUP_NAME --vnet-name $VNET_NAME --query "[?name == '$SUBNET_NAME'].id" --output tsv
     ```
 
-1.  将生成的值复制到剪贴板。 在下一个任务中需要使用它。
+1.  将生成的值复制到剪贴板。 稍后在下一个任务中将用到它。
 
 ### <a name="task-2-deploy-azure-resource-manager-template-provisioning-azure-vms-running-linux-suse-that-will-host-a-highly-available-sap-netweaver-deployment"></a>任务 2：部署预配运行 Linux SUSE 的 Azure VM 的 Azure 资源管理器模板，该 VM 将托管高可用性 SAP NetWeaver 部署
 
@@ -181,7 +181,7 @@ ms.locfileid: "137857521"
 
     -   可用性选项：不需要基础结构冗余
 
-    -   映像:Windows Server 2019 Datacenter - Gen 1
+    -   映像:Windows Server 2019 Datacenter - Gen2
 
     -   大小：标准 D2s_v3 或类似大小
 
@@ -553,7 +553,7 @@ ms.locfileid: "137857521"
     az account show --query '{id:id, tenantId:tenantId}' --output json
     ```
 
-1.  将结果值复制到记事本。 在下一个任务中需要使用它。
+1.  将结果值复制到记事本。 稍后在下一个任务中将用到它。
 
 
 ### <a name="task-4-create-an-azure-ad-application-for-the-stonith-device"></a>任务 4：为 STONITH 设备创建 Azure AD 应用程序
