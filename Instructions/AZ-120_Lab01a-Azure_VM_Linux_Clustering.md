@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b4933e26e0aed5e5c2c5b48107b98355d26c37c1
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
+ms.openlocfilehash: 719d5988e5f36bef026d781ba3f5f82893e77efc
+ms.sourcegitcommit: 3d7a4cc1ab7f6dcb68f259736361cfe76302b595
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857537"
+ms.lasthandoff: 03/24/2022
+ms.locfileid: "140872845"
 ---
 # <a name="az-120-module-2-explore-the-foundations-of-iaas-for-sap-on-azure"></a>AZ 120 模块 2：了解 Azure 上的 SAP 的 IaaS 的基础
 # <a name="lab-1a-implement-linux-clustering-on-azure-vms"></a>实验室 1a：在 Azure VM 上实现 Linux 群集
@@ -67,7 +67,7 @@ ms.locfileid: "137857537"
 
    > **注意**：等待预配完成。 这应该可以在一分钟内完成。
 
-1. 在 Azure 门户中，使用 Azure 门户页顶部的“搜索资源、服务和文档”文本框，搜索并导航到“虚拟机”边栏选项卡，然后在“虚拟机”边栏选项卡上选择“+ 创建”，并在下拉菜单中选择“虚拟机”    。
+1. 在 Azure 门户中，使用 Azure 门户页顶部的“搜索资源、服务和文档”文本框，搜索并导航到“虚拟机”边栏选项卡，然后在“虚拟机”边栏选项卡上选择“+ 创建”，并在下拉菜单中选择“Azure 虚拟机”    。
 
 1. 在“创建虚拟机”边栏选项卡的“基本信息”选项卡中，指定以下设置并选择“下一步:  磁盘 >”（保留所有其他设置的默认值）：
 
@@ -83,7 +83,7 @@ ms.locfileid: "137857537"
 
    - 可用性集：名为 az12001a-avset 的新可用性集，具有 2 个故障域和 5 个更新域
 
-   - 映像:SUSE Enterprise Linux for SAP 12 SP5 - BYOS
+   - 映像:SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1
    
    > **注意**：要查找映像，请单击“查看所有映像”链接，在“选择映像”边栏选项卡上的搜索文本框中，键入“SUSE Enterprise Linux for SAP 12 BYOS”，然后在结果列表中单击“SUSE Enterprise Linux for SAP 12 SP5 - BYOS”   。
 
@@ -145,7 +145,7 @@ ms.locfileid: "137857537"
 
    > **注意**：等待预配完成。 此操作应需不到 3 分钟的时间。
 
-1. 在 Azure 门户中，使用 Azure 门户页顶部的“搜索资源、服务和文档”文本框，搜索并导航到“虚拟机”边栏选项卡，然后在“虚拟机”边栏选项卡上选择“+ 创建”，并在下拉菜单中选择“虚拟机”    。
+1. 在 Azure 门户中，使用 Azure 门户页顶部的“搜索资源、服务和文档”文本框，搜索并导航到“虚拟机”边栏选项卡，然后在“虚拟机”边栏选项卡上选择“+ 创建”，并在下拉菜单中选择“Azure 虚拟机”    。
 
 1. 在“创建虚拟机”边栏选项卡的“基本信息”选项卡中，指定以下设置并选择“下一步:  磁盘 >”（保留所有其他设置的默认值）：
 
@@ -161,7 +161,7 @@ ms.locfileid: "137857537"
 
    - 可用性集：**az12001a-avset**
 
-   - 映像:SUSE Enterprise Linux for SAP 12 SP5 - BYOS
+   - 映像:SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1
    
    > **注意**：要查找映像，请单击“查看所有映像”链接，在“选择映像”边栏选项卡上的搜索文本框中，键入“SUSE Enterprise Linux for SAP 12 BYOS”，然后在结果列表中单击“SUSE Enterprise Linux for SAP 12 SP5 - BYOS”   。
 
@@ -262,7 +262,7 @@ ms.locfileid: "137857537"
 
 1. 重复上一步，使用前缀 **az12001a-vm0-DataDisk** 附加剩余的 7 个磁盘（总共 8 个）。 分配与磁盘名称的最后一个字符匹配的 LUN 编号。 使用 LUN **1** 将磁盘的主机缓存设置为 **只读** ，而其他部分，将主机缓存设置为 **无**。
 
-1. 保存更改。 
+1. 保存所做更改。 
 
 1. 在 Azure 门户中，导航到你在前一个任务 (az12001a-vm1) 中预配的第二个 Azure VM 边栏选项卡。
 
@@ -280,7 +280,7 @@ ms.locfileid: "137857537"
 
 1. 重复上一步，使用前缀“az12001a-vm1-DataDisk”附加剩余的 7 个磁盘（总共 8 个）。 分配与磁盘名称的最后一个字符匹配的 LUN 编号。 使用 LUN **1** 将磁盘的主机缓存设置为 **只读** ，而其他部分，将主机缓存设置为 **无**。
 
-1. 保存更改。 
+1. 保存所做更改。 
 
 > **Result**：完成此练习后，你已预配了支持高可用性 SAP HANA 部署所需的 Azure 计算资源。
 
@@ -465,12 +465,6 @@ ms.locfileid: "137857537"
    ```
 
 1. 将密钥值复制到剪贴板中。
-
-1. 切换到包含 az12001a-vm1 的 SSH 会话的“Cloud Shell”窗格，并通过运行以下命令创建目录 /root/.ssh/：
-
-   ```cli
-   mkdir /root/.ssh
-   ```
 
 1. 在 Cloud Shell 窗格中，在与 az12001a-vm1 的 SSH 会话中，通过运行以下命令在 vi 编辑器（可自由使用任何其他编辑器）创建 /root/.ssh/authorized\_keys 文件：
 
@@ -682,10 +676,13 @@ ms.locfileid: "137857537"
 
    - 区域：在本实验室的第一项练习中部署 Azure VM 的相同 Azure 区域
 
+   - SKU：**标准**
+   
    - 类型：**内部**
 
-   - SKU：**标准**
-
+1. 单击“下一步:前端 IP 配置”。 在“前端 IP 配置”屏幕上，单击“添加前端 IP 配置”，然后单击“添加”  。
+   - 名称：frontend1
+   
    - 虚拟网络：**az12001a-RG-vnet**
 
    - 子网：**subnet-0**
@@ -696,9 +693,9 @@ ms.locfileid: "137857537"
 
    - 可用区域：**区域冗余**
 
-1. 在“查看 + 创建”边栏选项卡中，选择“创建”。
+1. 选择“查看 + 创建”，然后选择“创建”。
 
-   > **注意**：等待负载均衡器配置完成。 该操作应该需要不到一分钟。 
+   > **注意**：等待负载均衡器配置完成。 这应该可以在一分钟内完成。 
 
 1. 在 Azure 门户中，导航到显示新配置的 az12001a-lb0 负载均衡器属性的边栏选项卡。 
 
@@ -806,7 +803,7 @@ ms.locfileid: "137857537"
 
    > **注意**：由于无法再从 Internet 直接访问两个群集 Azure VM，因此你将部署运行 Windows Server 2019 Datacenter 的 Azure VM，该 VM 将用作跳板机。 
 
-1. 在实验室计算机上，在 Azure 门户中使用 Azure 门户页顶部的“搜索资源、服务和文档”文本框，搜索并导航到“虚拟机”边栏选项卡，然后在“虚拟机”边栏选项卡上选择“+ 创建”，并在下拉菜单中选择“虚拟机”    。
+1. 在实验室计算机上，在 Azure 门户中使用 Azure 门户页顶部的“搜索资源、服务和文档”文本框，搜索并导航到“虚拟机”边栏选项卡，然后在“虚拟机”边栏选项卡上选择“+ 创建”，并在下拉菜单中选择“Azure 虚拟机”    。
 
 1. 在“创建虚拟机”边栏选项卡的“基本信息”选项卡中，指定以下设置并选择“下一步:  磁盘 >”（保留所有其他设置的默认值）：
 
@@ -820,7 +817,7 @@ ms.locfileid: "137857537"
 
    - 可用性选项：不需要基础结构冗余
 
-   - 映像:Windows Server 2019 Datacenter - Gen1
+   - 映像:Windows Server 2019 Datacenter - Gen 2
 
    - 大小：标准 DS1 v2 或类似大小
 

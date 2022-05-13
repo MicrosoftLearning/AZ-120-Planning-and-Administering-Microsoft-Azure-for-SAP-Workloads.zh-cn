@@ -1,15 +1,15 @@
 ---
-ms.openlocfilehash: 464e607c662cfac9f65e17eefb7f53e9ebc61eb3
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
+ms.openlocfilehash: 95cd67cfd85258abff0e906b20673ecf09d071a0
+ms.sourcegitcommit: 30dae3c49fe96a790479d08844a71fcb7851aa46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857561"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "139867883"
 ---
 # <a name="az-120-module-2-explore-the-foundations-of-iaas-for-sap-on-azure"></a>AZ 120 模块 2：了解 Azure 上的 SAP 的 IaaS 的基础
 # <a name="lab-1b-implement-windows-clustering-on-azure-vms"></a>实验室 1b：在 Azure VM 上实现 Windows 群集
 
-预计时间：120 分钟
+估计时间：120 分钟
 
 本实验室中的所有任务都是从 Azure 门户中执行的（包括 PowerShell Cloud Shell 会话）  
 
@@ -43,7 +43,7 @@ ms.locfileid: "137857561"
 
 持续时间：50 分钟
 
-在本练习中，你将部署在运行 Windows Server 2019 的 Azure VM 上配置故障转移群集所需的 Azure 基础结构计算组件。 此过程涉及到部署一对 Active Directory 域控制器，然后在同一虚拟网络中的同一可用性集内部署一对运行 Windows Server 2019 的 Azure VM。 若要自动部署域控制器，你将使用 Azure 资源管理器快速启动模板，可从 <https://github.com/polichtm/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc> 获得
+在本练习中，你将部署在运行 Windows Server 2019 的 Azure VM 上配置故障转移群集所需的 Azure 基础结构计算组件。 此过程涉及到部署一对 Active Directory 域控制器，然后在同一虚拟网络中的同一可用性集内部署一对运行 Windows Server 2019 的 Azure VM。 若要自动部署域控制器，你将使用 Azure 资源管理器快速启动模板，可从 <https://aka.ms/az120-1bdeploy> 获得
 
 ### <a name="task-1-deploy-a-pair-of-azure-vms-running-highly-available-active-directory-domain-controllers-by-using-an-azure-resource-manager-template"></a>任务 1：使用 Azure 资源管理器模板，部署一对运行高可用性 Active Directory 域控制器的 Azure VM
 
@@ -51,7 +51,7 @@ ms.locfileid: "137857561"
 
 1.  如果出现提示，则使用你在本实验室中使用的 Azure 订阅的所有者或参与者角色登录工作或学校或个人 Microsoft 帐户。
 
-1.  打开新的 Web 浏览器选项卡，导航到位于 <https://github.com/polichtm/azure-quickstart-templates> 的 Azure 快速启动模板页面，找到名为“在一个可用性集中创建 2 个新的 Windows VM、1 个新的 AD 林、域和 2 个 DC”的模板，并通过单击“部署到 Azure”按钮启动部署。 
+1.  打开新的 Web 浏览器选项卡，导航到位于 <https://aka.ms/az120-1bdeploy> 的 Azure 快速启动模板页面，找到名为“在一个可用性集中创建 2 个新的 Windows VM、1 个新的 AD 林、域和 2 个 DC”的模板，并通过单击“部署到 Azure”按钮启动部署。 
 
 1.  在“自定义部署”边栏选项卡上，指定以下设置并单击“查看 + 创建”，然后单击“创建”以启动部署  ：
 
@@ -87,7 +87,7 @@ ms.locfileid: "137857561"
 
        - 在 Azure 门户中，导航到上一步中确定的 VM 的边栏选项卡，选择“扩展”，从“扩展”边栏选项卡中删除 CustomScript 扩展
 
-       - 在 Azure 门户中，导航到“az12001b-ad-RG”资源组边栏选项卡，选择“部署”，选择失败部署的链接，然后选择“重新部署”，选择目标资源组 (az12001b-ad-RG) 并提供根帐户的密码 (Pa55w.rd1234)。    
+       - 导航到位于 <https://aka.ms/az120-1bdeploy> 的 GitHub 快速入门模板，选择“部署到 Azure”，然后选择目标资源组 (az12001b-ad-RG)，并提供根帐户的密码 (Pa55w.rd1234)  。
 
 
 ### <a name="task-2-deploy-a-pair-of-azure-vms-running-windows-server-2019-in-a-new-availability-set"></a>任务 2：在新可用性集中创建一对运行 Windows Server 2019 的 Azure VM。
@@ -108,7 +108,7 @@ ms.locfileid: "137857561"
 
     -   可用性集：名为 az12001b-cl-avset 的新可用性集，具有 2 个故障域和 5 个更新域
 
-    -   映像:Windows Server 2019 Datacenter - Gen1
+    -   映像:Windows Server 2019 Datacenter - Gen2
 
     -   大小：标准 D4s v3
 
@@ -272,7 +272,7 @@ ms.locfileid: "137857561"
 
 1.  重复上一步，附加前缀为 az12001b-cl-vm0-DataDisk 的其余 3 个磁盘（共 4 个）。 分配与磁盘名称的最后一个字符匹配的 LUN 编号。 对于最后一个磁盘 (LUN 3)，将主机缓存设置为“无”。 
 
-1.  保存更改。 
+1.  保存所做更改。 
 
 1.  在 Azure 门户中，导航到你在上一个任务中预配的第二个 Azure VM (az12001b-cl-vm1) 的边栏选项卡。
 
@@ -290,7 +290,7 @@ ms.locfileid: "137857561"
 
 1.  重复上一步，附加前缀为 az12001b-cl-vm1-DataDisk 的其余 3 个磁盘（共 4 个）。 分配与磁盘名称的最后一个字符匹配的 LUN 编号。 对于最后一个磁盘 (LUN 3)，将主机缓存设置为“无”。 
 
-1.  保存更改。 
+1.  保存所做更改。 
 
 > **Result**：完成本练习后，你已预配了支持高可用性 SAP NetWeaver 部署所需的 Azure 计算资源。
 
@@ -440,17 +440,15 @@ ms.locfileid: "137857561"
 
     -   性能：“标准”
 
-    -   帐户类型：“存储(常规用途 v1)”
-
     -   复制：本地冗余存储 (LRS)
 
     -   连接方式：公共终结点（所有网络）
 
-    -   需要安全传输：**已启用**
+    -   需要安全传输才能进行 REST API 操作：**已启用**
 
     -   大文件共享：**已禁用**
 
-    -   blob 软删除：**已禁用**
+    -   Blob、容器和文件的软删除：**已禁用**
 
     -   分层命名空间：**已禁用**
 
@@ -593,6 +591,8 @@ ms.locfileid: "137857561"
 
     -   SKU：**标准**
 
+    -   前端 IP 名称：frontend-ip1
+    
     -   虚拟网络：adVNET
 
     -   子网：clSubnet
@@ -767,7 +767,7 @@ ms.locfileid: "137857561"
 
     -   可用性选项：不需要基础结构冗余
 
-    -   映像：Windows Server 2019 Datacenter
+    -   映像:Windows Server 2019 Datacenter - Gen2
 
     -   大小：标准 DS1 v2 或类似大小
 

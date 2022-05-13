@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a3328b8fa21b3365dabdf9680c43fd5ee96cde3f
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
+ms.openlocfilehash: c24d0da0cd66795235076080e14c561c7399a16f
+ms.sourcegitcommit: 30dae3c49fe96a790479d08844a71fcb7851aa46
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857555"
+ms.lasthandoff: 03/15/2022
+ms.locfileid: "139867894"
 ---
 # <a name="az-120-module-4-deploy-sap-on-azure"></a>AZ 120 模块 4：部署 Azure 上的 SAP
 # <a name="lab-3b-implement-sap-architecture-on-azure-vms-running-windows"></a>实验 3b：在运行 Windows 的 Azure VM 上实施 SAP 体系结构
@@ -141,7 +141,7 @@ ms.locfileid: "137857555"
     (Get-AzVirtualNetworkSubnetConfig -Name $subnetName -VirtualNetwork $vNet).Id
     ```
 
-1.  将生成的值复制到剪贴板。 在下一个任务中需要使用它。
+1.  将生成的值复制到剪贴板。 稍后在下一个任务中将用到它。
 
 ### <a name="task-3-deploy-azure-resource-manager-template-provisioning-azure-vms-running-windows-server-2016-that-will-host-a-highly-available-sap-netweaver-deployment"></a>任务 3：部署可对运行 Windows Server 2016 的 Azure VM 进行预配的 Azure 资源管理器模板，而 Windows Server 2016 可托管高可用性 SAP NetWeaver 部署
 
@@ -280,7 +280,7 @@ ms.locfileid: "137857555"
 
     -   可用性选项：不需要基础结构冗余
 
-    -   映像：Windows Server 2019 Datacenter
+    -   映像:Windows Server 2019 Datacenter Gen2
 
     -   大小：Standard_D2s_v3
 
@@ -420,17 +420,15 @@ ms.locfileid: "137857555"
 
     -   性能：“标准”
 
-    -   帐户类型：“存储(常规用途 v1)”
-
     -   复制：本地冗余存储 (LRS)
 
     -   连接方式：公共终结点（所有网络）
 
-    -   需要安全传输：**已启用**
+    -   需要安全传输才能进行 REST API 操作：**已启用**
 
     -   大文件共享：**已禁用**
 
-    -   blob 软删除：**已禁用**
+    -   Blob、容器和文件共享软删除：**已禁用**
 
     -   分层命名空间：**已禁用**
 
