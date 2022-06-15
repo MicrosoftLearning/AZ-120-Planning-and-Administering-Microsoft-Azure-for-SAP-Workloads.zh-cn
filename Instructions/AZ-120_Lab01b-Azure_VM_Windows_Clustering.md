@@ -1,19 +1,22 @@
 ---
-ms.openlocfilehash: 95cd67cfd85258abff0e906b20673ecf09d071a0
-ms.sourcegitcommit: 30dae3c49fe96a790479d08844a71fcb7851aa46
+lab:
+  title: 02b - 在 Azure VM 上实现 Windows 群集
+  module: Module 02 - Explore the foundations of IaaS for SAP on Azure
+ms.openlocfilehash: e3158d4c4dcfeda55b2ecd9caf1761e014c21b3d
+ms.sourcegitcommit: 2d98b3c8cdd6f7b2b1a9a43868559bef227a5266
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "139867883"
+ms.lasthandoff: 05/19/2022
+ms.locfileid: "145179682"
 ---
 # <a name="az-120-module-2-explore-the-foundations-of-iaas-for-sap-on-azure"></a>AZ 120 模块 2：了解 Azure 上的 SAP 的 IaaS 的基础
-# <a name="lab-1b-implement-windows-clustering-on-azure-vms"></a>实验室 1b：在 Azure VM 上实现 Windows 群集
+# <a name="lab-2b-implement-windows-clustering-on-azure-vms"></a>实验室 2b：在 Azure VM 上实现 Windows 群集
 
 估计时间：120 分钟
 
 本实验室中的所有任务都是从 Azure 门户中执行的（包括 PowerShell Cloud Shell 会话）  
 
-   > **注意**：如果没有使用 Cloud Shell，实验室虚拟机必须安装 Az PowerShell 模块：[ **https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi** ](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi)。
+   > **注意**：如果没有使用 Cloud Shell，实验室虚拟机必须安装 Az PowerShell 模块：[ **https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi**](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi)。
 
 实验室文件：无
 
@@ -272,7 +275,7 @@ ms.locfileid: "139867883"
 
 1.  重复上一步，附加前缀为 az12001b-cl-vm0-DataDisk 的其余 3 个磁盘（共 4 个）。 分配与磁盘名称的最后一个字符匹配的 LUN 编号。 对于最后一个磁盘 (LUN 3)，将主机缓存设置为“无”。 
 
-1.  保存所做更改。 
+1.  保存更改。 
 
 1.  在 Azure 门户中，导航到你在上一个任务中预配的第二个 Azure VM (az12001b-cl-vm1) 的边栏选项卡。
 
@@ -290,7 +293,7 @@ ms.locfileid: "139867883"
 
 1.  重复上一步，附加前缀为 az12001b-cl-vm1-DataDisk 的其余 3 个磁盘（共 4 个）。 分配与磁盘名称的最后一个字符匹配的 LUN 编号。 对于最后一个磁盘 (LUN 3)，将主机缓存设置为“无”。 
 
-1.  保存所做更改。 
+1.  保存更改。 
 
 > **Result**：完成本练习后，你已预配了支持高可用性 SAP NetWeaver 部署所需的 Azure 计算资源。
 

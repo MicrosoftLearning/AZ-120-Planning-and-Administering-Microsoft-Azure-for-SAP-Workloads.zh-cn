@@ -1,19 +1,22 @@
 ---
-ms.openlocfilehash: f5fa14f0e3302e6c48c58f00c7a4c3043776c4a0
-ms.sourcegitcommit: 30dae3c49fe96a790479d08844a71fcb7851aa46
+lab:
+  title: 04a - 在运行 Linux 的 Azure VM 上实现 SAP 体系结构
+  module: Module 04 - Deploy SAP on Azure
+ms.openlocfilehash: 477438705acbd5fc3c0ac796353e77ef8a352dc5
+ms.sourcegitcommit: 2d98b3c8cdd6f7b2b1a9a43868559bef227a5266
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "139867891"
+ms.lasthandoff: 05/19/2022
+ms.locfileid: "145179693"
 ---
 # <a name="az-120-module-4-deploy-sap-on-azure"></a>AZ 120 模块 4：部署 Azure 上的 SAP
-# <a name="lab-3a-implement-sap-architecture-on-azure-vms-running-linux"></a>实验室 3a：在运行 Linux 的 Azure VM 上实施 SAP 体系结构
+# <a name="lab-4a-implement-sap-architecture-on-azure-vms-running-linux"></a>实验室 4a：在运行 Linux 的 Azure VM 上实施 SAP 体系结构
 
 预计时间：100 分钟
 
 本实验室中的所有任务都是从 Azure 门户执行的（包括 Bash Cloud Shell 会话）  
 
-   > **注意**：如果没有使用 Cloud Shell，实验室虚拟机必须已安装 Azure CLI：[ **https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows** ](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows)。
+   > **注意**：如果没有使用 Cloud Shell，实验室虚拟机必须已安装 Azure CLI：[ **https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows)。
 
 实验室文件：无
 
@@ -102,7 +105,7 @@ ms.locfileid: "139867891"
 
 ### <a name="task-2-deploy-azure-resource-manager-template-provisioning-azure-vms-running-linux-suse-that-will-host-a-highly-available-sap-netweaver-deployment"></a>任务 2：部署预配运行 Linux SUSE 的 Azure VM 的 Azure 资源管理器模板，该 VM 将托管高可用性 SAP NetWeaver 部署
 
-1.  在实验室计算机上，启动浏览器并浏览到 [ **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md** ](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md)
+1.  在实验室计算机上，启动浏览器并浏览到 [ **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md**](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md)
 
     > **注意**：确保使用 Microsoft Edge 或第三方浏览器。 请勿使用 Internet Explorer。
 
@@ -275,7 +278,7 @@ ms.locfileid: "139867891"
 
 1.  在与 az12003a-vm0 的 RDP 会话中，在服务器管理器中，导航到 **本地服务器** 视图并关闭 **IE 增强安全配置**。
 
-1.  在与 az12003a-vm0 的 RDP 会话中，从 [ **https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html** ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) 下载并安装 PuTTY。
+1.  在与 az12003a-vm0 的 RDP 会话中，从 [ **https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) 下载并安装 PuTTY。
 
 1.  使用 PuTTY 通过 SSH 连接 **i20-db-0** Azure VM。 确认安全警报，并在出现提示时提供以下凭据：
 

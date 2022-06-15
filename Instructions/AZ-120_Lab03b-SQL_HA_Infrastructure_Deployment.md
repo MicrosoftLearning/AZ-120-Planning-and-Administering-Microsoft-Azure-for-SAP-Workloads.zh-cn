@@ -1,19 +1,22 @@
 ---
-ms.openlocfilehash: c24d0da0cd66795235076080e14c561c7399a16f
-ms.sourcegitcommit: 30dae3c49fe96a790479d08844a71fcb7851aa46
+lab:
+  title: 04b - 在运行 Windows 的 Azure VM 上实现 SAP 体系结构
+  module: Module 04 - Deploy SAP on Azure
+ms.openlocfilehash: ac76cdb886422455b7ebb8ad110498249d8de148
+ms.sourcegitcommit: 2d98b3c8cdd6f7b2b1a9a43868559bef227a5266
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2022
-ms.locfileid: "139867894"
+ms.lasthandoff: 05/19/2022
+ms.locfileid: "145179690"
 ---
 # <a name="az-120-module-4-deploy-sap-on-azure"></a>AZ 120 模块 4：部署 Azure 上的 SAP
-# <a name="lab-3b-implement-sap-architecture-on-azure-vms-running-windows"></a>实验 3b：在运行 Windows 的 Azure VM 上实施 SAP 体系结构
+# <a name="lab-4b-implement-sap-architecture-on-azure-vms-running-windows"></a>实验室 4b：在运行 Windows 的 Azure VM 上实施 SAP 体系结构
 
 预计时间：150 分钟
 
 从 Azure 门户执行本实验室中的所有任务（包括 PowerShell Cloud Shell 会话）  
 
-   > **注意**：如果没有使用 Cloud Shell，实验室虚拟机必须安装 Az PowerShell 模块：[ **https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi** ](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi)。
+   > **注意**：如果没有使用 Cloud Shell，实验室虚拟机必须安装 Az PowerShell 模块：[ **https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi**](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi)。
 
 实验室文件：无
 
@@ -198,9 +201,9 @@ ms.locfileid: "139867894"
 
 ### <a name="task-4-deploy-the-scale-out-file-server-sofs-cluster"></a>任务 4：部署横向扩展文件服务器 (SOFS) 群集
 
-在此任务中，你将使用 GitHub 中提供的 Azure 资源管理器快速启动模板部署将为 SAP ASCS 服务器托管文件共享的横向扩展文件服务器 (SOFS) 群集：[ **https://github.com/robotechredmond/301-storage-spaces-direct-md** ](https://github.com/robotechredmond/301-storage-spaces-direct-md) 
+在此任务中，你将使用 GitHub 中提供的 Azure 资源管理器快速启动模板部署将为 SAP ASCS 服务器托管文件共享的横向扩展文件服务器 (SOFS) 群集：[ **https://github.com/robotechredmond/301-storage-spaces-direct-md**](https://github.com/robotechredmond/301-storage-spaces-direct-md) 
 
-1.  在实验室计算机上，启动浏览器并浏览到 [ **https://github.com/robotechredmond/301-storage-spaces-direct-md** ](https://github.com/robotechredmond/301-storage-spaces-direct-md)。 
+1.  在实验室计算机上，启动浏览器并浏览到 [ **https://github.com/robotechredmond/301-storage-spaces-direct-md**](https://github.com/robotechredmond/301-storage-spaces-direct-md)。 
 
     > **注意**：确保使用 Microsoft Edge 或第三方浏览器。 请勿使用 Internet Explorer。
 
