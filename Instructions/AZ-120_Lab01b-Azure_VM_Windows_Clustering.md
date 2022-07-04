@@ -1,16 +1,16 @@
 ---
 lab:
-  title: 02b - 在 Azure VM 上实现 Windows 群集
-  module: Module 02 - Explore the foundations of IaaS for SAP on Azure
-ms.openlocfilehash: e3158d4c4dcfeda55b2ecd9caf1761e014c21b3d
-ms.sourcegitcommit: 2d98b3c8cdd6f7b2b1a9a43868559bef227a5266
+  title: 01b - 在 Azure VM 上实现 Windows 群集
+  module: Module 01 - Explore the foundations of IaaS for SAP on Azure
+ms.openlocfilehash: c26666b82fca650d24943bf0fce29832a4dae4a5
+ms.sourcegitcommit: 8ca1b7551a98ecb9d367d5cb853f126f634029e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2022
-ms.locfileid: "145179682"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "146649505"
 ---
-# <a name="az-120-module-2-explore-the-foundations-of-iaas-for-sap-on-azure"></a>AZ 120 模块 2：了解 Azure 上的 SAP 的 IaaS 的基础
-# <a name="lab-2b-implement-windows-clustering-on-azure-vms"></a>实验室 2b：在 Azure VM 上实现 Windows 群集
+# <a name="az-120-module-1-explore-the-foundations-of-iaas-for-sap-on-azure"></a>AZ 120 模块 1：了解 Azure 上的 SAP 的 IaaS 的基础
+# <a name="lab-1b-implement-windows-clustering-on-azure-vms"></a>实验室 1b：在 Azure VM 上实现 Windows 群集
 
 估计时间：120 分钟
 
@@ -40,13 +40,13 @@ ms.locfileid: "145179682"
 
 -   安装了兼容 Azure Cloud Shell 的 Web 浏览器且具有 Azure 访问权限的实验室计算机
 
-> **注意**：请考虑使用“美国东部”或“美国东部 2”区域来部署资源。
+> **注意**：确保为资源部署选择的 Azure 区域支持可用性区域。 有关此类区域的列表，请参阅 (https://docs.microsoft.com/en-us/azure/availability-zones/az-overview) 。 考虑使用“美国东部”或“美国东部 2” 。
 
 ## <a name="exercise-1-provision-azure-compute-resources-necessary-to-support-highly-available-sap-netweaver-deployments"></a>练习 1：预配必要的 Azure 计算资源以支持高度可用的 SAP NetWeaver 部署
 
 持续时间：50 分钟
 
-在本练习中，你将部署在运行 Windows Server 2019 的 Azure VM 上配置故障转移群集所需的 Azure 基础结构计算组件。 此过程涉及到部署一对 Active Directory 域控制器，然后在同一虚拟网络中的同一可用性集内部署一对运行 Windows Server 2019 的 Azure VM。 若要自动部署域控制器，你将使用 Azure 资源管理器快速启动模板，可从 <https://aka.ms/az120-1bdeploy> 获得
+在本练习中，你将部署在运行 Windows Server 2019 的 Azure VM 上配置故障转移群集所需的 Azure 基础结构计算组件。 这将涉及部署一对 Active Directory 域控制器，然后部署一对运行 Windows Server 2019 的 Azure VM，每个 VM 将创建为新域的 DC，并将放置在同一虚拟网络内的单独可用性区域中。 若要自动部署域控制器，你将使用 Azure 资源管理器快速启动模板，可从 <https://aka.ms/az120-1bdeploy> 获得
 
 ### <a name="task-1-deploy-a-pair-of-azure-vms-running-highly-available-active-directory-domain-controllers-by-using-an-azure-resource-manager-template"></a>任务 1：使用 Azure 资源管理器模板，部署一对运行高可用性 Active Directory 域控制器的 Azure VM
 
@@ -54,7 +54,7 @@ ms.locfileid: "145179682"
 
 1.  如果出现提示，则使用你在本实验室中使用的 Azure 订阅的所有者或参与者角色登录工作或学校或个人 Microsoft 帐户。
 
-1.  打开新的 Web 浏览器选项卡，导航到位于 <https://aka.ms/az120-1bdeploy> 的 Azure 快速启动模板页面，找到名为“在一个可用性集中创建 2 个新的 Windows VM、1 个新的 AD 林、域和 2 个 DC”的模板，并通过单击“部署到 Azure”按钮启动部署。 
+1.  打开新的 Web 浏览器选项卡，导航到位于 [https://aka.ms/az120-1bdeployzone](https://aka.ms/az120-1bdeployzone) 的 Azure 快速启动模板页面“在单独的可用性区域中创建 2 个新的 Windows VM、1 个新的 AD 林、域和 2 个 DC”，并通过单击“部署到 Azure”按钮启动部署 。
 
 1.  在“自定义部署”边栏选项卡上，指定以下设置并单击“查看 + 创建”，然后单击“创建”以启动部署  ：
 
@@ -62,11 +62,13 @@ ms.locfileid: "145179682"
 
     -   资源组：新资源组名称 az12001b-ad-RG
 
-    -   位置：可在其中部署 Azure VM 的 Azure 区域
-
-    > **注意**：请考虑使用“美国东部”或“美国东部 2”区域来部署资源。 
+    -   区域：你有足够的配额来部署实验室 VM 的 Azure 区域
 
     -   管理员用户名：**Student**
+
+    -   位置：你有足够的配额来部署实验室 VM 的 Azure 区域
+
+    > **注意**：请考虑使用“美国东部”或“美国东部 2”区域来部署资源。 
 
     -   密码：Pa55w.rd1234
 
@@ -78,7 +80,7 @@ ms.locfileid: "145179682"
 
     -   Bdc RDP 端口：13389
 
-    -   _artifacts 位置： **https://raw.githubusercontent.com/polichtm/azure-quickstart-templates/master/active-directory-new-domain-ha-2-dc/**
+    -   _artifacts 位置： **https://aka.ms/az120-1bdeployzoneraw**
 
     -   _artifacts 位置 Sas 令牌：留空
 
@@ -88,9 +90,9 @@ ms.locfileid: "145179682"
 
        - 在 Azure 门户中的“部署”边栏选项卡上，查看部署详细信息并确定 CustomScriptExtension 安装失败的 VM
 
-       - 在 Azure 门户中，导航到上一步中确定的 VM 的边栏选项卡，选择“扩展”，从“扩展”边栏选项卡中删除 CustomScript 扩展
+       - 在 Azure 门户中，导航到上一步中确定的 VM 的边栏选项卡，选择“扩展”，从“扩展”边栏选项卡中删除 CustomScript 扩展 
 
-       - 导航到位于 <https://aka.ms/az120-1bdeploy> 的 GitHub 快速入门模板，选择“部署到 Azure”，然后选择目标资源组 (az12001b-ad-RG)，并提供根帐户的密码 (Pa55w.rd1234)  。
+       - 导航到位于 [https://aka.ms/az120-1bdeployzone](https://aka.ms/az120-1bdeployzone) 的 GitHub 快速启动模板，并选择“部署到 Azure”。 在浏览器会话重定向到 Azure 门户后，重复此任务的最后一步。
 
 
 ### <a name="task-2-deploy-a-pair-of-azure-vms-running-windows-server-2019-in-a-new-availability-set"></a>任务 2：在新可用性集中创建一对运行 Windows Server 2019 的 Azure VM。
