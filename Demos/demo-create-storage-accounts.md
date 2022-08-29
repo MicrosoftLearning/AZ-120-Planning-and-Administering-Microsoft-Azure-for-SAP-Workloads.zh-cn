@@ -1,20 +1,12 @@
----
-ms.openlocfilehash: 0106fd5b2837ad870b148f4ecebb4dcc690b89ca
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857535"
----
 # <a name="demonstration-create-storage-accounts"></a>演示：创建存储帐户
 
 ## <a name="create-a-storage-account-in-the-portal"></a>在门户中创建存储帐户
 
-1.  在 Azure 门户中，选择“所有服务”。 在资源列表中，键入“存储帐户”  。 开始键入时，会根据输入筛选该列表。 选择“存储帐户”  。
+1.  In the Azure portal, select <bpt id="p1">**</bpt>All services<ept id="p1">**</ept>. In the list of resources, type Storage Accounts. As you begin typing, the list filters based on your input. Select <bpt id="p1">**</bpt>Storage Accounts<ept id="p1">**</ept>.
 2.  在出现的“存储帐户”窗口中，选择“添加”。
 3.  选择要在其中创建存储帐户的订阅。
-4.  在“资源组”字段下，选择“新建”。 输入新资源组的名称。
-5.  为你的存储帐户输入“名称”。 所选名称在 Azure 中必须唯一。 该名称还必须为 3 到 24 个字符，并且只能包含数字和小写字母。
+4.  Under the Resource group field, select <bpt id="p1">**</bpt>Create new<ept id="p1">**</ept>. Enter a name for your new resource group.
+5.  Enter a <bpt id="p1">**</bpt>name<ept id="p1">**</ept> for your storage account. The name you choose must be unique across Azure. The name also must be between 3 and 24 characters in length, and can include numbers and lowercase letters only.
 6.  为你的存储帐户选择位置，或使用默认位置。
 7.  将这些字段设置为其默认值：
 
@@ -29,7 +21,7 @@ ms.locfileid: "137857535"
 
 ## <a name="create-a-storage-account-using-powershell"></a>使用 PowerShell 创建存储帐户
 
-使用以下代码通过 PowerShell 创建存储帐户。 根据你的要求修改存储类型和名称。
+在 Azure 门户中，选择“所有服务”。
 
 ```PowerShell
 Get-AzLocation | select Location 
@@ -41,7 +33,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup -Name "storagedemo" -Loca
 
 ## <a name="create-a-storage-account-using-azure-cli"></a>使用 Azure CLI 创建存储帐户
 
-使用以下代码通过 Azure CLI 创建存储帐户。 更改存储类型和名称以满足你的要求。
+在资源列表中，键入“存储帐户”  。
 
 ```PowerShell
 az group create --name storage-resource-group --location westus 

@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 8253f093bc365b521180798165190e879b37a9af
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857533"
----
 # <a name="demonstration-create-a-virtual-machine-with-powershell"></a>演示：使用 PowerShell 创建虚拟机
 
 在本演示中，将使用 PowerShell 创建一个虚拟机。
@@ -50,15 +42,15 @@ ms.locfileid: "137857533"
 ```
 Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"
 ```
-2. 从本机创建 RDP 会话。 将 IP 地址替换为你的 VM 的公共 IP 地址。 该命令在 cmd 窗口中运行。
+2. Create an RDP session from your local machine. Replace the IP address with the public IP address of your VM. This command runs from a cmd window.
 
 ```
 mstsc /v:publicIpAddress
 ```
 
-3. 出现提示时，请提供计算机的登录凭据。 请务必 **使用不同的帐户**。 键入 localhost \username 作为用户名，输入你为虚拟机创建的密码，然后选择“确定”。 你可能会在登录过程中收到证书警告。 选择 **是** 或 **继续** 创建连接
+3. When prompted, provide your login credentials for the machine. Be sure to <bpt id="p1">**</bpt>Use a different account<ept id="p1">**</ept>. Type the username as localhost\username, enter password you created for the virtual machine, and then select <bpt id="p1">**</bpt>OK<ept id="p1">**</ept>. You may receive a certificate warning during the sign-in process. Select <bpt id="p1">**</bpt>Yes<ept id="p1">**</ept> or <bpt id="p2">**</bpt>Continue<ept id="p2">**</ept> to create the connection
 4. 完成后，关闭到 VM 的 RDP 连接。
-5. 清理资源。 这将需要几分钟时间，然后删除资源组和虚拟机。
+5. Clean up your resources. This will take a few minutes and remove the resource group and virtual machine.
 
 ```
 Remove-AzResourceGroup -Name myResourceGroup 

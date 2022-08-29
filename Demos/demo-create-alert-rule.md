@@ -1,32 +1,24 @@
----
-ms.openlocfilehash: d4dfc005ea866ab0c7330005cb0cda7841d3ddf5
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857513"
----
 # <a name="demonstration-create-an-alert-rule"></a>演示：创建警报规则
 
 ## <a name="create-rule"></a>创建规则
 
-1. 在 Azure 门户中，单击“监视”。 “监视”边栏选项卡将所有监视设置和数据合并到一个视图中。
-2. 依次单击“警报”、“+ 新建警报规则”。   大多数资源边栏选项卡在其“监控”下的资源菜单中也有警报，因此你也可以在那里创建警报。
+1. In Azure portal, click on <bpt id="p1">**</bpt>Monitor<ept id="p1">**</ept>. The Monitor blade consolidates all your monitoring settings and data in one view.
+2. Click <bpt id="p1">**</bpt>Alerts<ept id="p1">**</ept> then click <bpt id="p2">**</bpt>+ New alert rule<ept id="p2">**</ept>. As most resource blades also have Alerts in their resource menu under Monitoring, you could create alerts from there as well.
 
 ## <a name="explore-alert-targets"></a>浏览警报目标
 
-1. 单击“目标”下的“选择”，选择要触发警报的目标资源。 使用“订阅”和“资源类型”下拉列表查找要监视的资源。   也可以使用搜索栏查找资源。
-2. 如果选定的资源具有可创建警报的指标，则右下方的“可用信号”将包含这些指标。  可在此文中查看指标警报支持的资源类型的完整列表。
+1. Click <bpt id="p1">**</bpt>Select<ept id="p1">**</ept> under Target, to select a target resource that you want to alert on. Use <bpt id="p1">**</bpt>Subscription<ept id="p1">**</ept> and <bpt id="p2">**</bpt>Resource type<ept id="p2">**</ept> drop-downs to find the resource you want to monitor. You can also use the search bar to find your resource.
+2. 在 Azure 门户中，单击“监视”。
 3. 选择后单击“完成”。
 
 ## <a name="explore-alert-conditions"></a>浏览警报条件
 
 1. 选择目标资源之后，单击“添加条件”。
 2. 此时会显示资源支持的信号列表，请选择要为其创建警报的指标。
-3. （可选）通过调整期间和聚合来优化指标。 如果指标具有维度，则会显示维度表。 
-4. 你将看到最近 6 小时的指标图表。 调整“显示历史记录”下拉列表。
-5. 定义“警报逻辑”。 这将决定指标预警规则将评估的逻辑。
-6. 如果使用静态阈值，指标图表可以帮助确定可能的合理阈值。 如果使用动态阈值，指标图表将显示基于最新数据计算得出的阈值。
+3. “监视”边栏选项卡将所有监视设置和数据合并到一个视图中。 
+4. Observe a chart for the metric for the last 6 hours. Adjust the <bpt id="p1">**</bpt>Show history<ept id="p1">**</ept> drop-down.
+5. 依次单击“警报”、“+ 新建警报规则”。  
+6. 大多数资源边栏选项卡在其“监控”下的资源菜单中也有警报，因此你也可以在那里创建警报。
 7. 单击“完成”  。
 8. （可选）若要监视复杂的预警规则，请添加另一个条件。 
 
