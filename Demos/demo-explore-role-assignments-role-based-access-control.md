@@ -1,16 +1,8 @@
----
-ms.openlocfilehash: 5cf6ad2fc19b92d11ea26eee7dea0e40548d09da
-ms.sourcegitcommit: 0113753baec606c586c0bdf4c9452052a096c084
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "137857558"
----
 # <a name="demonstration-explore-role-assignments-and-role-based-access-control"></a>演示：了解角色分配和基于角色的访问控制
 
 ## <a name="locate-access-control-blade"></a>找到“访问控制”边栏选项卡
 
-1. 访问 Azure 门户，选择一个资源组。 记下所使用的资源组。 
+1. Access the Azure portal, and select a resource group. Make a note of what resource group you use. 
 2. 选择“访问控制(IAM)”边栏选项卡。 
 3. 此边栏选项卡将可用于许多不同的资源，因此你可以控制访问权限。
 
