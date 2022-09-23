@@ -1,42 +1,42 @@
-# 演示：创建并管理文件共享和快照
+# <a name="demonstration-create-and-manage-file-shares-and-snapshots"></a>演示：创建和管理文件共享与快照
 
->**备注**：这些步骤需要一个存储帐户。 
+>**注意**：这些步骤需要一个存储帐户。 
 
-## 创建文件共享并上传文件
+## <a name="create-a-file-share-and-upload-a-file"></a>创建文件共享和上传文件
 
-1. 访问你的存储帐户，然后单击“**文件**”。
-2. 单击 **+文件共享**，命 **名** 新文件共享并给予 **配额**。
-3. 创建文件共享后，**上传**文件。 
-4. 请注意“**添加目录**”、“**删除共享**”和编辑“**配额**”的能力。
+1. 访问你的存储帐户，然后单击“文件”。
+2. 单击“+文件共享”，然后提供新文件共享的“名称”和“配额”  。
+3. 创建文件共享后，上传文件。 
+4. 注意，可以添加目录、删除共享和编辑配额。
 
-## 管理快照
+## <a name="manage-snapshots"></a>管理快照
 
 1. 访问文件共享。
-1. 选择“**创建快照**”。
-1. 选择“**查看快照**”并验证已创建快照。
-1. 单击快照并验证其是否包含你上传的文件。
-1. 单击属于快照的文件，并查看**文件属性**。 
-1. 注意“**下载**”和“**恢复**”快照文件的选项。 
+1. 选择“创建快照”。
+1. 选择“查看快照”并验证已创建快照。
+1. 单击快照并验证其是否包含上传的文件。
+1. 单击属于快照的文件，并查看文件属性。 
+1. 注意“下载”和“恢复”快照文件的选项。 
 1. 访问文件共享并删除之前上传的文件。
-1. 从快照**恢复**文件。 
+1. 从快照恢复文件。 
  
-## 创建文件共享 (PowerShell)
+## <a name="create-a-file-share-powershell"></a>创建文件共享 (PowerShell)
 
-1. 为你的存储帐户和密钥创建背景。该背景涵盖了存储帐户名和帐户密钥。
+1. 为存储帐户和密钥创建上下文：上下文封装存储帐户名称和帐户密钥。
 
     ```PowerShell
     $storageContext = New-AzStorageContext storage-account-name storage-account-key
     ```
 
-2. 创建文件共享。文件共享的名称必须全部小写。
+2. Create the file share. The name of your file share must be all lowercase.
 
     ```PowerShell
     $share = New-AzStorageShare logs -Context $storageContext
     ```
 
-## 装载文件共享 (PowerShell)
+## <a name="mount-a-file-share-powershell"></a>装载文件共享 (PowerShell)
 
-1. 从常规（即未提升的）PowerShell 会话运行以下命令，以装载 Azure 文件共享。记得使用适当的信息替换 **your-resource-group-name、your-storage-account-name、your-file-share-name** 和 **desired-drive-letter**。
+1. Run the following commands from a regular (i.e. not an elevated) PowerShell session to mount the Azure file share. Remember to replace <bpt id="p1">**</bpt>your-resource-group-name<ept id="p1">**</ept>, <bpt id="p2">**</bpt>your-storage-account-name<ept id="p2">**</ept>, <bpt id="p3">**</bpt>your-file-share-name<ept id="p3">**</ept>, and <bpt id="p4">**</bpt>desired-drive-letter<ept id="p4">**</ept> with the proper information.
 
     ```PowerShell
     $resourceGroupName = "your-resource-group-name"
