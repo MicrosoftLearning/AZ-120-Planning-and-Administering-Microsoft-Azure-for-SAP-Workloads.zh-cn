@@ -2,7 +2,7 @@
 
 ## <a name="locate-access-control-blade"></a>找到“访问控制”边栏选项卡
 
-1. Access the Azure portal, and select a resource group. Make a note of what resource group you use. 
+1. 访问 Azure 门户，选择一个资源组。 记下所使用的资源组。 
 2. 选择“访问控制(IAM)”边栏选项卡。 
 3. 此边栏选项卡将可用于许多不同的资源，因此你可以控制访问权限。
 

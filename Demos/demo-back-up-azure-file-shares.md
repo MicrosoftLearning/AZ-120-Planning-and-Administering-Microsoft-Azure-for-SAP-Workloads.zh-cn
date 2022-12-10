@@ -10,7 +10,7 @@
 3. 单击“添加”。
 4. 提供“名称”、“订阅”、“资源组”和“位置”   。 
 5. 新建的保管库应与文件共享位于同一位置。 
-5. Click <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>. It can take several minutes for the Recovery Services vault to be created. Monitor the status notifications in the upper right-hand area of the portal. Once your vault is created, it appears in the list of Recovery Services vaults. 
+5. 单击“创建”。 创建恢复服务保管库可能需要数分钟。 可以在门户右上区域监视状态通知。 创建保管库后，它会显示在“恢复服务保管库”的列表中。 
 6. 如果几分钟后未添加保管库，请单击“刷新”。
 
 ## <a name="configure-the-vault"></a>配置保管库
@@ -20,13 +20,13 @@
 3. 从“你的工作负载在何处运行?”下拉菜单中，选择“Azure”。
 4. 从**需备份什么？** 菜单，选择 **Azure FileShare**。
 5. 单击“备份”****。
-6. From the list of Storage accounts, <bpt id="p1">**</bpt>select a storage account<ept id="p1">**</ept>, and click <bpt id="p2">**</bpt>OK<ept id="p2">**</ept>. Azure searches the storage account for files shares that can be backed up. If you recently added your file shares, allow a little time for the file shares to appear.
+6. 从“存储”帐户列表中，**选择一个存储帐户**，然后单击**确定**。 Azure 搜索存储帐户中是否有可以备份的文件共享。 如果你最近添加了文件共享，请留出一点时间让文件共享出现。
 7. 从“文件共享”列表中，**选择一个或多个需备份的文件共享**，然后单击“确定”。
-8. On the Backup Policy page, choose <bpt id="p1">**</bpt>Create New backup policy<ept id="p1">**</ept> and provide Name, Schedule, and Retention information. Click <bpt id="p1">**</bpt>OK<ept id="p1">**</ept>.
+8. 在“备份策略”页面上，选择“新建备份策略”并提供名称、计划以及保留期信息。 单击 **“确定”** 。
 9. 完成配置备份后，请单击“启用备份”。 
 
 ## <a name="explore-recovery-services-vault-information"></a>浏览恢复服务保管库信息
 
-1. Explore the <bpt id="p1">**</bpt>Backup items<ept id="p1">**</ept> blade. There is information on backed up items and replicated items.
-2. Explore the <bpt id="p1">**</bpt>Backup policies<ept id="p1">**</ept> blade. You can add or delete backup policies. 
-3. Explore the <bpt id="p1">**</bpt>Backup jobs<ept id="p1">**</ept> blade. Here you can review the status of your backup jobs.
+1. 浏览“备份项”边栏选项卡。 有关于备份项和复制项的信息。
+2. 浏览**备份策略**边栏选项卡。 可添加或删除备份策略。 
+3. 浏览“备份作业”边栏选项卡。 在此处可查看备份作业的状态。

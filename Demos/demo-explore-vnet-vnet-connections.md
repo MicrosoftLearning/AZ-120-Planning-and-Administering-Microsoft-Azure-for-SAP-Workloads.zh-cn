@@ -1,6 +1,6 @@
 # <a name="demonstration-explore-vnet-to-vnet-connections"></a>演示：了解 VNet 到 VNet 连接
 
-><bpt id="p1">**</bpt>Note<ept id="p1">**</ept>: This demonstration works best with two virtual networks with subnets. All the steps are in the portal. 
+>**注意**：此演示最适用于两个具有子网的虚拟网络。 所有步骤都在门户中。 
 
 ## <a name="explore-the-gateway-subnet-blade"></a>浏览“网关子网”边栏选项卡
 
@@ -8,10 +8,10 @@
 1. 选择“+ 网关子网”。
 
     - 请注意，无法更改子网的名称。  
-    - Notice the <bpt id="p1">**</bpt>address range<ept id="p1">**</ept> of the gateway subnet. The address must be contained by the address space of the virtual network. 
+    - 注意网关子网的“地址范围” 。 该地址必须包含在虚拟网络的地址空间中。 
 
 1. 请记住，每个虚拟网络都需要一个网关子网。 
-1. **注意**：此演示最适用于两个具有子网的虚拟网络。
+1. 关闭"添加网关子网"页面。 无需保存所做的更改。
 
 ## <a name="explore-the-connected-devices-blade"></a>浏览“已连接设备”边栏选项卡
 
@@ -29,7 +29,7 @@
 5. 注意“网关类型”、“VPN 类型”和“SKU”  。 
 6. 注意需要一个“公共 IP 地址”。
 7. 请记住，每个虚拟网络都需要虚拟网络网关。 
-8. 所有步骤都在门户中。 
+8. 关闭“添加虚拟网络网关”页。 无需保存所做的更改。 
 
 ## <a name="explore-adding-a-connection-between-the-virtual-networks"></a>探索如何在虚拟网络之间添加连接
 
@@ -40,4 +40,4 @@
 5. 在“设置”页，请注意你将需要选择两个不同的虚拟网络。
 6. 阅读“建立双向连接”复选框上的的“帮助”信息。
 7. 请注意“共享密钥(PSK)”信息。
-8. Close the <bpt id="p1">**</bpt>Add connection<ept id="p1">**</ept> page. You do not need to save your changes. 
+8. 关闭“添加连接”页。 无需保存所做的更改。 

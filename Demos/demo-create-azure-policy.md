@@ -2,12 +2,12 @@
 
 ## <a name="assign-a-policy"></a>分配策略
 
-1. Launch the Azure Policy service in the Azure portal by clicking <bpt id="p1">**</bpt>All services<ept id="p1">**</ept>, then searching for and selecting <bpt id="p2">**</bpt>Policy<ept id="p2">**</ept>. This service is under <bpt id="p1">**</bpt>Management and Governance<ept id="p1">**</ept>.
-2. Select <bpt id="p1">**</bpt>Assignments<ept id="p1">**</ept> on the left side of the Azure Policy page. An assignment is a policy that has been assigned to take place within a specific scope.
+1. 在 Azure 门户中单击“所有服务”，然后搜索并选择“策略”，启动 Azure Policy 服务。  该服务位于**管理和治理**下。
+2. 选择“Azure Policy”页左侧的“分配”。 分配即为在特定范围内分配策略以供执行。
 3. 选择“策略 - 分配”页面顶部的“分配策略”。
 4. 请注意“范围”，它用于确定对哪些资源或资源分组施加策略分配。
-5. Select the <bpt id="p1">**</bpt>Policy definition ellipsis<ept id="p1">**</ept> to open the list of available definitions. Take some time to review the built-in policy definitions.
-6. 在 Azure 门户中单击“所有服务”，然后搜索并选择“策略”，启动 Azure Policy 服务。 
+5. 选择策略定义省略号，打开可用定义列表。 请花点时间查看内置策略定义。
+6. 选择“需要 SQL Server 版本 12.0”****。 该策略可确保所有 SQL Server 均使用 12.0 版。 如果该策略定义不可用，请选择其他策略。
 7. 将“创建托管标识”保留为未选中状态。 
 8. 单击**分配**，以创建您的策略。
 
