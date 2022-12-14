@@ -28,7 +28,7 @@
     $storageContext = New-AzStorageContext storage-account-name storage-account-key
     ```
 
-2. Create the file share. The name of your file share must be all lowercase.
+2. 创建文件共享。 文件共享的名称必须是全部小写。
 
     ```PowerShell
     $share = New-AzStorageShare logs -Context $storageContext
@@ -36,7 +36,7 @@
 
 ## <a name="mount-a-file-share-powershell"></a>装载文件共享 (PowerShell)
 
-1. Run the following commands from a regular (i.e. not an elevated) PowerShell session to mount the Azure file share. Remember to replace <bpt id="p1">**</bpt>your-resource-group-name<ept id="p1">**</ept>, <bpt id="p2">**</bpt>your-storage-account-name<ept id="p2">**</ept>, <bpt id="p3">**</bpt>your-file-share-name<ept id="p3">**</ept>, and <bpt id="p4">**</bpt>desired-drive-letter<ept id="p4">**</ept> with the proper information.
+1. 通过常规的（即权限未提升的）PowerShell 会话运行以下命令，以便装载 Azure 文件共享。 记得使用适当的信息替换 your-resource-group-name、your-storage-account-name、your-file-share-name 和 desired-drive-letter   。
 
     ```PowerShell
     $resourceGroupName = "your-resource-group-name"

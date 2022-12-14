@@ -12,14 +12,14 @@
 
 ## <a name="customize-your-experience"></a>自定义你的体验
 
-1. Examine the icons next to the Dashboard drop-down. For example, New Dashboard, Upload, Download, Edit, and Clone. 
+1. 检查“仪表板”下拉列表旁边的图标。 例如“新建仪表板”、“上传”、“下载”、“编辑”和“克隆”。 
 1. 单击“新建仪表板”。
 1. 练习添加、固定、移动、删除磁贴以及重设其大小。 
 1. 单击“完成自定义”以保存编辑。
-1. Select the <bpt id="p1">**</bpt>Settings<ept id="p1">**</ept> icon on the top banner. Experiment with different color themes. <bpt id="p1">**</bpt>Apply<ept id="p1">**</ept> your changes.
-1. Practice reordering your <bpt id="p1">**</bpt>Favorites<ept id="p1">**</ept> list. Do this by holding and dragging list items up or down.
+1. 选择顶部横幅上的“设置”图标。 尝试不同颜色主题。 单击“应用”以应用更改。
+1. 练习重新排列“收藏夹”列表。 按住列表项并向上或向下拖动以完成此操作。
 1. 请注意，单击“收藏夹”将转到该页面。 
-1. Click the <bpt id="p1">**</bpt>Cost Management and Billing<ept id="p1">**</ept> blade. <bpt id="p1">**</bpt>Pin<ept id="p1">**</ept> your Subscription information to your Dashboard.
+1. 单击“成本管理和计费”边栏选项卡。 将订阅信息固定到仪表板上。
 1. 访问仪表板并根据喜好进行更改。 
 1. 使用页面顶部的“搜索”文本框。
 1. 键入“资源”并注意提供了上下文匹配项。

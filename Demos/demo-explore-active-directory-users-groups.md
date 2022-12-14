@@ -5,14 +5,14 @@
 ## <a name="determine-domain-information"></a>确定域信息
 
 1. 访问 Azure 门户，并导航到“Azure Active Directory”边栏选项卡。
-2. Make a note of your available domain name. For example, usergmail.onmicrosoft.com.
+2. 记下你的可用域名。 例如 usergmail.onmicrosoft.com。
 
 ## <a name="explore-user-accounts"></a>浏览用户帐户
 
 1. 选择“用户”边栏选项卡。
 2. 选择“新建用户”。 
 3. 请注意选择创建“新来宾用户”。
-4. Create a <bpt id="p1">**</bpt>New user<ept id="p1">**</ept>. Replace your domain. 
+4. 创建新用户。 替换你的域。 
 
     + **名称**：*Chris Green*
     + 地址：chris@your 域
@@ -55,13 +55,13 @@
     Get-AzADUser
     ```
 
-4. Add the user to the group. Replace <bpt id="p1">**</bpt>groupObjectId<ept id="p1">**</ept> and <bpt id="p2">**</bpt>userObjectId<ept id="p2">**</ept>.
+4. 将用户添加到组中。 替换 groupObjectId 和 userObjectId 。
 
     ```
     Add-AzADGroupMember -MemberUserPrincipalName ""myemail@domain.com"" -TargetGroupDisplayName ""MyGroupDisplayName""
     ```
 
-5. Verify the members of the group. Replace <bpt id="p1">**</bpt>groupObjectId<ept id="p1">**</ept>.
+5. 验证组成员。 替换 groupObjectId。
 
     ```
     Get-AzADGroupMember -GroupDisplayName "MyGroupDisplayName"

@@ -5,16 +5,16 @@
 ## <a name="create-the-virtual-machine"></a>创建虚拟机
 
 1. 在 Azure 门户的左上角选择“创建资源”。
-2. In the search box above the list of Azure Marketplace resources, search for <bpt id="p1">**</bpt>Windows Server 2016 Datacenter<ept id="p1">**</ept>. After locating the image, click <bpt id="p1">**</bpt>Create<ept id="p1">**</ept>.
-3. In the <bpt id="p1">**</bpt>Basics<ept id="p1">**</ept> tab, under <bpt id="p2">**</bpt>Project details<ept id="p2">**</ept>, make sure the correct subscription is selected and then choose to <bpt id="p3">**</bpt>Create new<ept id="p3">**</ept> resource group. Type <bpt id="p1">*</bpt>myResourceGroup<ept id="p1">*</ept> for the name.
+2. 在 Azure 市场资源列表上方的搜索框中，搜索“Windows Server 2016 Datacenter”。 找到映像后，单击“创建”。
+3. 在“基本信息”标签页中的“项目详细信息”下，确保选择了正确的订阅，然后选择“新建资源组”。 对于名称，请键入 *myResourceGroup*。
 
     ![为 VM 新建资源组](Images/AZ103_Demo_Creating_VMs1.png)
 
-4. Under <bpt id="p1">**</bpt>Instance details<ept id="p1">**</ept>, type <bpt id="p2">*</bpt>myVM<ept id="p2">*</ept> for the <bpt id="p3">**</bpt>Virtual machine name<ept id="p3">**</ept> and choose <bpt id="p4">*</bpt>East US<ept id="p4">*</ept> for your <bpt id="p5">**</bpt>Location<ept id="p5">**</ept>. Leave the other defaults.
+4. 在“实例详细信息”**** 下，对于“虚拟机名称”**** 键入 *myVM*，对于“位置”**** 选择“美国东部”**。 保留其他默认值。
 
     ![“实例详细信息”部分](Images/AZ103_Demo_Creating_VMs2.png)
 
-5. Under <bpt id="p1">**</bpt>Administrator account<ept id="p1">**</ept>, provide a username, such as <bpt id="p2">*</bpt>azureuser<ept id="p2">*</ept> and a password. The password must be at least 12 characters long and meet the defined complexity requirements.
+5. 在“管理员帐户”下提供用户名（例如 *azureuser*）和密码。 密码必须至少 12 个字符，且符合定义的复杂性要求。
 
     ![输入用户名和密码](Images/AZ103_Demo_Creating_VMs3.png)
 
@@ -22,24 +22,24 @@
 
     ![打开 RDP 和 HTTP 的端口](Images/AZ103_Demo_Creating_VMs4.png)
 
-7. Move to the <bpt id="p1">**</bpt>Management<ept id="p1">**</ept> tab, and under <bpt id="p2">**</bpt>Monitoring<ept id="p2">**</ept> turn <bpt id="p3">**</bpt>Off<ept id="p3">**</ept> Boot Diagnostics. This will eliminate validation errors. 
-8. 在 Azure 市场资源列表上方的搜索框中，搜索“Windows Server 2016 Datacenter”。 
+7. 移至“管理”选项卡，在“监视”下，关闭启动诊断。 这将消除验证错误。 
+8. 保留其余默认值，然后选择页面底部的“查看 + 创建”按钮。 等待验证，然后单击“创建”。 
 
     ![查看 + 创建](Images/AZ103_Demo_Creating_VMs5.png)
 
 ## <a name="connect-to-the-virtual-machine"></a>连接到虚拟机
 
-找到映像后，单击“创建”。
+创建与虚拟机的远程桌面连接。 这些说明指明了如何从 Windows 计算机连接到 VM。 在 Mac 上，你需要从 Mac App Store 安装 RDP 客户端。
 
 1. 在虚拟机属性页面上，选择“连接”按钮。
 2. 在“连接到虚拟机”**** 页面中，保留默认选项，以使用 DNS 名称通过端口 3389 进行连接，然后单击“下载 RDP 文件”****。
 3. 打开下载的 RDP 文件，然后在出现提示时选择“连接”。
-4. In the <bpt id="p1">**</bpt>Windows Security<ept id="p1">**</ept> window, select <bpt id="p2">**</bpt>More choices<ept id="p2">**</ept> and then <bpt id="p3">**</bpt>Use a different account<ept id="p3">**</ept>. Type the username as localhost\username, enter password you created for the virtual machine, and then select <bpt id="p1">**</bpt>OK<ept id="p1">**</ept>.
-5. 在“基本信息”标签页中的“项目详细信息”下，确保选择了正确的订阅，然后选择“新建资源组”。
+4. 在“Windows 安全性”窗口中，依次选择“更多选择”、“使用其他帐户”。 键入 localhost \username 作为用户名，输入你为虚拟机创建的密码，然后选择“确定”。
+5. 你可能会在登录过程中收到证书警告。 选择“是”或“继续”以创建连接。  
 
 ## <a name="install-web-server"></a>安装 Web 服务器
 
-对于名称，请键入 *myResourceGroup*。
+要查看运行中的 VM，请安装 IIS Web 服务器。 在 VM 中打开 PowerShell 提示符并运行以下命令：
 
 ```PowerShell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -55,4 +55,4 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 ## <a name="clean-up-resources"></a>清理资源
 
-><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept> When no longer needed, you can delete the resource group, virtual machine, and all related resources. To do so, select the resource group for the virtual machine, select <bpt id="p1">**</bpt>Delete<ept id="p1">**</ept>, then confirm the name of the resource group to delete.
+>**注意：** 不再需要时，可以删除资源组、虚拟机和所有相关资源。 为此，请选择虚拟机的资源组，选择“删除”，然后确认要删除的资源组的名称。
