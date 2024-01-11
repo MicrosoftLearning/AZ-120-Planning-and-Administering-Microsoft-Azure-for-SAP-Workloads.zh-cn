@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 使用 Azure SAP 解决方案中心自动部署
+  title: 05 - 使用 Azure SAP 解决方案中心自动部署
   module: Design and implement an infrastructure to support SAP workloads on Azure
 ---
 
@@ -62,7 +62,7 @@ lab:
 
     > **注意**：如果这是你第一次在要在本实验室中使用的 Azure 订阅中启动 Cloud Shell，系统会要求你创建 Azure 文件共享以保留 Cloud Shell 文件。 如果是，接受默认设置，这样会在自动生成的资源组中创建存储账户。
 
-1. 在 Azure 门户的 Cloud Shell 窗格中，在 PowerShell 提示符处运行以下命令：其中  指定你打算在本实验室中部署资源的 Azure 区域（例如 ）：****
+1. 在 Azure 门户的“Cloud Shell”窗格中的 PowerShell 提示符下，运行以下命令（如果需要，请将 `eastus` 替换为你打算在本实验室中将资源部署到的 Azure 区域的名称）：****
 
     > **注意**：若要确定 Azure 区域的名称，请在 Cloud Shell 的 Bash 提示符下运行 `(Get-AzLocation).Location`。****
      
@@ -130,7 +130,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|新资源组的名称 ACSS-DEMO********|
     |存储帐户名称|由字母和数字组成、长度介于 3 到 24 个字符之间的任意全局唯一名称|
-    |区域|在其中有足够的 vCPU 配额来运行此实验室的 Azure 区域的名称|
+    |区域|你在其中有足够 vCPU 配额来运行本实验室的 Azure 区域的名称|
     |性能|**标准**|
     |冗余|**异地冗余存储 (GRS)**|
     |在区域可用的情况下，提供对数据的读取访问|已禁用|
@@ -151,7 +151,7 @@ lab:
     |---|---|
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|ACSS-DEMO****|
-    |区域|在本实验室中预配存储帐户的 Azure 区域的名称|
+    |区域|本实验室中前面预配了存储帐户的 Azure 区域的名称|
     |名称|Contoso-MSI****|
 
 1. 在“查看”选项卡上，等待验证过程完成并选择“创建”********。
@@ -190,7 +190,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|新资源组的名称 CONTOSO-VNET-RG********|
     |名称|ACSS-DEMO-NSG****|
-    |区域|在本实验室中预配存储帐户的 Azure 区域的名称|
+    |区域|本实验室中前面预配了存储帐户的 Azure 区域的名称|
 
 1. 在“查看 + 创建”选项卡上，等待验证过程完成并选择“创建”********。
 
@@ -206,7 +206,7 @@ lab:
     |---|---|
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|CONTOSO-VNET-RG****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
     |名称|ACSS-ROUTE****|
     |传播网关路由|**否**|
 
@@ -223,7 +223,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|CONTOSO-VNET-RG****|
     |虚拟网络名称|CONTOSO-VNET****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
 
 1. 在“安全性”选项卡上，接受默认设置并选择“下一步”。********
 
@@ -289,7 +289,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|CONTOSO-VNET-RG****|
     |名称|FirewallPolicy_contoso-firewall****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
     |策略层|**标准**|
     |父策略|**无**|
 
@@ -373,7 +373,7 @@ lab:
     |---|---|
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|CONTOSO-VNET-RG****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
     |名称|contoso-firewal-pip****|
     |IP 版本|**IPv4**|
     |SKU|**标准**|
@@ -396,7 +396,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|CONTOSO-VNET-RG****|
     |名称|contoso-firewall****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
     |可用性区域|**无**|
     |防火墙 SKU|**标准**|
     |防火墙管理|**使用防火墙策略来管理此防火墙**|
@@ -439,7 +439,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|CONTOSO-VNET-RG****|
     |名称|ACSS-BASTION****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
     |层|**基本**|
     |实例计数|**2**|
     |虚拟网络|CONTOSO-VNET****|
@@ -457,14 +457,14 @@ lab:
 
 持续时间：40 分钟
 
-在本练习中，你将使用 Azure SAP 解决方案中心将托管 SAP 工作负载的基础结构部署到上一练习使用的 Azure 订阅中。 成功部署后，可以使用适用于 SAP 解决方案的 Azure 中心继续安装 SAP 软件，或者删除本实验室中预配的 Azure 资源。
+在本练习中，你将使用 Azure SAP 解决方案中心将托管 SAP 工作负载的基础结构部署到上一练习使用的 Azure 订阅中。 成功部署后，可以通过使用 Azure SAP 解决方案中心继续安装 SAP 软件，也可以删除本实验室中预配的 Azure 资源。
 
->**注意**：有关使用适用于 SAP 解决方案的 Azure 中心安装 SAP 软件的信息，请参阅 Microsoft Learn 文档，该 [文档介绍如何获取 SAP 安装媒体](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-sap-installation-media) 和 [安装 SAP 软件](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/install-software)。 本练习的第二个任务中包含有关删除此实验室中预配的 Azure 资源的说明。
+>**注意**：有关使用 Azure SAP 解决方案中心安装 SAP 软件的信息，请参阅介绍了如何[获取 SAP 安装介质](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-sap-installation-media)和[安装 SAP 软件](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/install-software)的 Microsoft Learn 文档。 有关删除本实验室中预配的 Azure 资源的说明包含在本练习的第二个任务中。
 
 该练习由以下任务组成：
 
 - 任务 1：创建 SAP 解决方案虚拟实例
-- 任务 2：删除实验室中预配的所有 Azure 资源
+- 任务 2：删除本实验室中预配的 Azure 资源
 
 ### 任务 1：创建 SAP 解决方案虚拟实例
 
@@ -477,7 +477,7 @@ lab:
     |订阅|你在此实验室中使用的 Azure 订阅的名称|
     |资源组|新资源组的名称 Contoso-SAP-C1S********|
     |名称 (SID)|C1S****|
-    |区域|在本实验室中将资源部署到的 Azure 区域的名称|
+    |区域|本实验室中前面预配了资源的 Azure 区域的名称|
     |环境类型|**生产**|
     |SAP 产品|S/4HANA****|
     |数据库|HANA|
@@ -533,21 +533,21 @@ lab:
 
     >备注：请等待部署完成。 这可能需要大约 25 分钟。
 
->**注意**：按照下一任务中的说明，继续使用适用于 SAP 解决方案的 Azure 中心安装 SAP 软件，或者按照下一任务中的说明删除实验室资源。
+>**注意**：部署后，请继续使用 Azure SAP 解决方案中心安装 SAP 软件，或者按照下一任务中的说明删除实验室资源。
 
-### 任务 2：删除实验室中预配的所有 Azure 资源
+### 任务 2：删除本实验室中预配的 Azure 资源
 
->**重要说明**：部署的资源成本很高，因此，如果不打算在此之后使用实验室，请确保取消预配实验室。 请注意，删除 SAP 解决方案虚拟实例不会删除底层基础结构资源。 若要删除资源，应使用此任务中所述的过程，该过程以三个资源组中的资源为目标：
+>**重要说明**：部署的资源成本很高，因此，如果不打算在此之后使用实验室，请确保取消预配实验室。 删除 SAP 解决方案虚拟实例不会删除底层基础结构资源。 若要删除这些资源，应使用此任务中所述的过程，该过程以三个资源组中的资源为目标：
 
 - Contoso-SAP-C1S****
 - CONTOSO-VNET-RG****
 - ACSS-DEMO****
 
-1. 在 SEA-SVR2 上，在显示 Azure 门户的 Microsoft Edge 窗口中，通过选择 Cloud Shell 图标打开 Cloud Shell 窗格。 
+1. 在实验室计算机上显示 Azure 门户的 Microsoft Edge 窗口中，选择“Cloud Shell”**** 图标，然后在 Cloud Shell 中启动一个 PowerShell 会话。 
 
     > **注意**：如果这是你第一次在要在本实验室中使用的 Azure 订阅中启动 Cloud Shell，系统会要求你创建 Azure 文件共享以保留 Cloud Shell 文件。 如果是，接受默认设置，这样会在自动生成的资源组中创建存储账户。
 
-1. 在Azure 门户的 **Cloud Shell** 窗格中的 PowerShell 提示符下，运行以下命令以停止并解除分配在此实验室中部署的所有 Azure VM：
+1. 在 Azure 门户的“Cloud Shell”窗格中的 PowerShell 提示符下，运行以下命令以停止和解除分配本实验室中部署的所有 Azure VM：****
 
     ```powershell
     $resourceGroupName = 'Contoso-SAP-C1S'
@@ -557,7 +557,7 @@ lab:
     }
     ```
 
-1. 在 PowerShell 提示符下运行以下命令，从此实验室中部署的所有 Azure VM 分离所有数据磁盘：
+1. 在 PowerShell 提示符下运行以下命令，以从本实验室中部署的所有 Azure VM 分离所有数据磁盘：
 
     ```powershell
     foreach ($vm in $vms) {  
@@ -569,7 +569,7 @@ lab:
     }
     ```
 
-1. 在 PowerShell 提示符下，运行以下命令，为附加到此实验室中部署的所有 Azure VM 的网络接口和磁盘启用删除选项：
+1. 在 PowerShell 提示符下运行以下命令，以对附加到本实验室中部署的所有 Azure VM 的网络接口和磁盘启用删除选项：
 
     ```powershell
     foreach ($vm in $vms) {
@@ -581,7 +581,7 @@ lab:
     }   
     ```
 
-1. 在 PowerShell 提示符下，运行以下命令以删除此实验室中部署的所有 Azure VM：
+1. 在 PowerShell 提示符下运行以下命令，以删除本实验室中部署的所有 Azure VM：
 
     ```powershell
     foreach ($vm in $vms) {
@@ -589,22 +589,22 @@ lab:
     }
     ```
 
-1. 运行以下命令来删除资源组及其所有剩余资源：
+1. 在 PowerShell 提示符下运行以下命令，以删除 Contoso-SAP-C1S**** 资源组及其所有剩余资源：
 
     ```powershell
     Remove-AzResourceGroup -Name 'Contoso-SAP-C1S' -Force -AsJob
     ```
 
-1. 运行以下命令来删除资源组及其所有剩余资源：
+1. 在 PowerShell 提示符下运行以下命令，以删除 CONTOSO-VNET-RG**** 资源组及其所有剩余资源：
 
     ```powershell
     Remove-AzResourceGroup -Name 'CONTOSO-VNET-RG' -Force -AsJob
     ```
 
-1. 运行以下命令来删除资源组及其所有剩余资源：
+1. 在 PowerShell 提示符下运行以下命令，以删除 ACSS-DEMO**** 资源组及其所有剩余资源：
 
     ```powershell
     Remove-AzResourceGroup -Name 'ACSS-DEMO' -Force -AsJob
     ```
 
-    >**注意**：该命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以随后立即在同一个 PowerShell 会话中运行另一个 PowerShell 命令，但需要几分钟才能实际删除资源组。
+    >**注意**：最后三个命令以异步方式执行（由 -AsJob 参数决定），因此，虽然你可以紧接着在同一个 PowerShell 会话中运行下一个 PowerShell 命令，但实际删除资源组及其资源需要几分钟时间。
