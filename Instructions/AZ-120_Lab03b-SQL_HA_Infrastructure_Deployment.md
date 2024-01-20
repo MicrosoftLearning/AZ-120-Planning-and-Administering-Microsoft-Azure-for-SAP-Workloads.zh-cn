@@ -48,71 +48,75 @@ lab:
 
 1. 如果出现提示，则使用你在本实验室中使用的 Azure 订阅的所有者或参与者角色登录工作或学校或个人 Microsoft 帐户。
 
-1. 在 Azure 门户界面上，单击“+ 创建资源”****。
+1. 在 Azure 门户中，在 Cloud Shell 中启动 PowerShell 会话。 
 
-1. 从“新建”边栏选项卡上，开始创建一个新的“模板部署(使用自定义模板部署)”********
+    > **注意**：如果这是你第一次在当前 Azure 订阅中启动 Cloud Shell，则会要求你创建 Azure 文件共享以保留 Cloud Shell 文件。 如果是，接受默认设置，这样会在自动生成的资源组中创建存储账户。
 
-1. 从“自定义部署”边栏选项卡的“快速启动模板(免责声明)”下拉列表中，选择条目“application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones”，然后单击“选择模板”。****************
-
-    > **注意**：或者，可以启动部署，方法是导航到 Azure 快速启动模板页面 (<https://github.com/Azure/azure-quickstart-templates>)，找到名为“在单独的可用性区域中新建 2 个 Windows VM、1 个 AD 林、域和 2 个 DC”的模板，并通过单击“部署到 Azure”按钮启动部署。********
-
-1. 在“使用可用性区域新建具有 2 个 DC 的 AD 域”边栏选项卡中，指定以下设置，然后单击“检查 + 创建”，然后单击“创建”以启动部署：************
-     
-    | 设置 | 值 |
-    |   --    |  --   |
-    | **订阅** | Azure 订阅的名称  |
-    | 资源组 | 新资源组的名称 az12003b-ad-RG |
-    | **位置** | 可在其中部署 Azure VM 的 Azure 区域 |
-    | **管理员用户名** | **学生** |
-    | **位置** | 你在上方指定的同一 Azure 区域 |
-    | **密码** | 任何自行设置的长度至少为 12 个字符的复杂密码** |
-    | 域名 | adatum.com |
-    | DnsPrefix | 使用任何唯一的有效 DNS 前缀 |
-    | VM 大小**** | 标准 D2s_v3 |
-    | **_artifacts 位置** | **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/** |
-    | **_artifacts Location Sas 令牌** | *留空* |
-
-    > **备注**：请确保记住在部署期间指定的密码。 本实验室中稍后会用到它。
-
-    > **注意**：请考虑使用“美国东部”**** 或“美国东部 2”**** 区域来部署资源。 
-    
-    > **注意**：该部署大约需要 35 分钟。 等待部署完成后，再继续执行下一个任务。
-
-    > **注意**：如果在 CustomScriptExtension 组件部署期间，部署失败并出现“冲突”错误消息，请按以下步骤修正此问题****：
-
-       - 在 Azure 门户中的“部署”**** 边栏选项卡上，查看部署详细信息并确定 CustomScriptExtension 安装失败的 VM
-
-       - 在 Azure 门户中，导航到上一步中确定的 VM 的边栏选项卡，选择“扩展”****，从“扩展”**** 边栏选项卡中移除 CustomScript 扩展
-
-       - 在 Azure 门户中，导航到“az12003b-sap-RG”资源组边栏选项卡，选择“部署”，选择失败部署的链接，然后选择“重新部署”，选择目标资源组 (az12003b-sap-RG) 并提供根帐户的密码 (Pa55w.rd1234)。********************
-
-1. 部署完成后，在 Azure 门户导航到 adPDC 虚拟机的边栏选项卡，在垂直导航菜单的“操作”部分，选择“运行命令”，在“运行命令脚本”窗格的“PowerShell 脚本”文本框中，输入以下脚本并选择“运行”按钮     ：
+1. 在 Cloud Shell 窗格中，运行以下命令，为托管 Bicep 模板的存储库创建浅表克隆，以用于部署运行高度可用的 Active Directory 域控制器的一对 Azure VM，并将当前目录设置为该模板及其参数文件的位置：
 
     ```
-    New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
-    Restart-Computer -Force
+    cd $HOME
+    rm ./azure-quickstart-templates -rf
+    git clone --depth 1 https://github.com/polichtm/azure-quickstart-templates
+    cd ./azure-quickstart-templates/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/
     ```
 
-1. 等待 adPDC 虚拟机再次运行，导航到 adBDC 虚拟机的边栏选项卡，在垂直导航菜单的“操作”部分，选择“运行命令”，在“运行命令脚本”窗格的“PowerShell 脚本”文本框中，输入以下脚本并选择“运行”按钮      ：
+1. 在 Cloud Shell 窗格中运行以下命令，将 `$rgName` 变量的值设置为 `az12001b-ad-RG`：
 
     ```
-    New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
-    Restart-Computer -Force
+    $rgName = 'az12003b-ad-RG'
     ```
-    
-1. 等待 adBDC 虚拟机再次运行，导航到 adPDC 虚拟机的边栏选项卡，在垂直导航菜单的“操作”部分，选择“运行命令”，在“运行命令脚本”窗格的“PowerShell 脚本”文本框中，输入以下脚本并选择“运行”按钮      ：
+
+1. 在 Cloud Shell 窗格中，运行以下命令，将 `$location` 变量的值设置为支持可用性区域并且你打算在其中部署实验室 VM 的 Azure 区域的名称（将 `<Azure_region>` 占位符替换为该区域的名称）：
 
     ```
-    repadmin /syncall /APeD
+    $location = '<Azure_region>'
     ```
-    
-1. 导航到 adBDC 虚拟机的边栏选项卡，在垂直导航菜单的“操作”部分，选择“运行命令”，在“运行命令脚本”窗格的“PowerShell 脚本”文本框中，输入以下脚本并选择“运行”按钮     ：
+
+1. 在 Cloud Shell 窗格中，运行以下命令以在选择的 Azure 区域中创建名为 az12001b-ad-RG 的资源组：
 
     ```
-    repadmin /syncall /APeD
+    New-AzResourceGroup -Name $rgName -Location $location
     ```
-    
-    > **注意**：这些附加步骤会禁用 IPv6（这会导致在这种情况下出现名称解析问题），并随后在两个域控制器之间强制复制。  
+
+1. 在 Cloud Shell 窗格中，运行以下命令以设置变量 `$deploymentName` 的值：
+
+    ```
+    $deploymentName = 'az1203b-' + $(Get-Date -Format 'yyyy-MM-dd-hh-mm')
+    ```
+
+1. 在 Cloud Shell 窗格中，运行以下命令以设置管理用户帐户的名称及其密码（分别将 `<username>` 和 `<password>` 占位符替换为管理用户帐户的名称及其密码的值）：
+
+    ```
+    $adminUsername = '<username>'
+    $adminPassword = ConvertTo-SecureString '<password>' -AsPlainText -Force
+    ```
+
+    > **注意**：确保密码满足适用于部署运行 Windows 的 Azure VM 的复杂性要求（长度至少为 12 个字符，包含大小写字母、数字和特殊字符）。
+
+1. 在 Cloud Shell 窗格中，运行以下命令以运行部署：
+
+    ```
+    New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $rgName -TemplateFile .\main.bicep -TemplateParameterFile .\azuredeploy.parameters.json -adminUsername $adminUsername -adminPassword $adminPassword -c
+    ```
+
+1. 查看命令的输出，并验证它是否不包含任何错误和警告。 出现提示时，按 Enter 键继续部署。
+
+    > **注意**：该部署大约需要 30 分钟才能完成。 等待部署完成后再继续下一个任务。
+
+    > **注意**：如果部署失败并出现包括语句 `PowerShell DSC resource MSFT_xADDomainController failed to execute Set-TargetResource functionality with error message: Domain 'adatum.com' could not be found` 的错误，请使用以下步骤修正此问题：
+
+    - 在 Azure 门户中导航到 **adBDC** VM 的边栏选项卡，在左侧垂直导航菜单的“**设置**”部分中，选择“**扩展 + 应用程序**”，在“**扩展 + 应用程序** ”窗格中，选择“**PrepareBDC**”，然后在“**准备 BDC**”窗格中选择“**卸载**”。 
+
+    - 导航回到“**adBDC**”VM 边栏选项卡并重启 Azure VM。
+
+    - 导航到“**az1203b-ad-RG**”边栏选项卡，在左侧垂直导航菜单的“**设置**”部分中，选择“**部署**”。
+
+    - 在“**az1203b-ad-RG \| 部署**”边栏选项卡上，选择以 **az1203b** 前缀开头的部署，然后在部署边栏选项卡上选择“**重新部署**”。
+
+    - 在“**自定义部署**”边栏选项卡中的“**管理员密码**”文本框中，输入在原始部署期间使用的相同密码，选择“**查看 + 创建**”，然后选择“**创建**”。
+
+    - 请勿等待重新部署完成，而是继续进行下一项任务。 重新部署大约需要 3 分钟时间才能完成。
 
 ### 任务 2：提供将托管可运行高可用性 SAP NetWeaver 部署和 S2D 群集的 Azure VM 的子网。
 
