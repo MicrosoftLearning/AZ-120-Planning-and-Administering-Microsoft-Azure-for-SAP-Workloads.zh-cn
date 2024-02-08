@@ -399,9 +399,7 @@ lab:
    |应用程序 OS 映像|Red Hat Enterprise Linux 8.2 for SAP Applications - x64 Gen2 最新版****|
    |数据库 OS 映像选项|**使用市场映像**|
    |数据库 OS 映像|Red Hat Enterprise Linux 8.2 for SAP Applications - x64 Gen2 最新版****|
-   |SAP 传输选项|创建新的 SAP 传输目录****|
-   |传输资源组|**acss-infra-RG**|
-   |存储帐户名称|无条目|
+   |SAP 传输选项|**** 不包括 SAP 传输目录|
    |身份验证类型|SSH 公共****|
    |用户名|contososapadmin****|
    |SSH 公钥源|生成新密钥对|
