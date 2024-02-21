@@ -7,6 +7,10 @@ lab:
 # AZ 1006 模块：设计和实现基础结构以支持 Azure 上的 SAP 工作负载
 # AZ-1006 1 日课程实验室：Azure SAP 解决方案中心 (ACSS) 部署和维护概述
 
+>**重要说明**：当前不支持此实验室（2 月 24 日）。****
+    - 有关详细的手动必备项部署，请参阅[实验室 6a](https://github.com/MicrosoftLearning/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/master/Instructions/AZ-120_Lab06a-ACSS_One_Day.md)
+    - 有关 ACSS 演示基础结构部署，请参阅[实验室 6c(https://github.com/MicrosoftLearning/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/master/Instructions/AZ-120_Lab06c-ACSS_One_Day.md)]。
+
 预计时间：100 分钟
 
 此 AZ-1006 1 日课程实验室中的所有任务是从 Azure 门户执行的
@@ -15,7 +19,9 @@ lab:
 
 完成本实验后，你将能够：
 
-- 使用 Azure SAP 解决方案中心在 Azure 中部署和维护托管 SAP 工作负载的基础结构
+- 使用 Azure SAP 解决方案中心实现评估 Azure 中 SAP 工作负载部署的最低先决条件
+- 使用 Azure SAP 解决方案中心部署在 Azure 中托管 SAP 工作负载的基础结构
+- 在 Azure 中维护 SAP 工作负载，同时使用 Azure SAP 解决方案中心
 
 ## 说明
 
