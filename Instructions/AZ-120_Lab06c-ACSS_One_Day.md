@@ -228,9 +228,9 @@ lab:
     |应用程序子网|**app**|
     |数据库子网|**db**|
     |应用程序 OS 映像选项|**使用市场映像**|
-    |应用程序 OS 映像|**Red Hat Enterprise Linux 8.6 for SAP Applications - x64 Gen2 最新版**|
+    |应用程序 OS 映像|**Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**|
     |数据库 OS 映像选项|**使用市场映像**|
-    |数据库 OS 映像|**Red Hat Enterprise Linux 8.6 for SAP Applications - x64 Gen2 最新版**|
+    |数据库 OS 映像|**Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**|
     |SAP 传输选项|创建新的 SAP 传输目录****|
     |传输资源组|**acss-infra-RG**|
     |存储帐户名称|*空白*|
@@ -241,6 +241,8 @@ lab:
     |SQP FQDN|sap.contoso.com****|
     |托管标识源|使用现有的用户分配的托管标识****|
     |托管标识名称|**acss-infra-MI**|
+
+    >**备注**：确保选择 **Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**。
 
 1. 在“虚拟机”选项卡上，指定以下设置****：
 
