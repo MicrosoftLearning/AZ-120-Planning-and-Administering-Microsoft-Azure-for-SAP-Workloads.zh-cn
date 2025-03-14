@@ -402,9 +402,9 @@ lab:
    |应用程序子网|**应用(10.0.2.0/24)**|
    |数据库子网|**数据库 (10.0.3.0/24)**|
    |应用程序 OS 映像选项|**使用市场映像**|
-   |应用程序 OS 映像|Red Hat Enterprise Linux 8.2 for SAP Applications - x64 Gen2 最新版****|
+   |应用程序 OS 映像|**Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**|
    |数据库 OS 映像选项|**使用市场映像**|
-   |数据库 OS 映像|Red Hat Enterprise Linux 8.2 for SAP Applications - x64 Gen2 最新版****|
+   |数据库 OS 映像|**Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**|
    |SAP 传输选项|**** 不包括 SAP 传输目录|
    |身份验证类型|SSH 公共****|
    |用户名|contososapadmin****|
