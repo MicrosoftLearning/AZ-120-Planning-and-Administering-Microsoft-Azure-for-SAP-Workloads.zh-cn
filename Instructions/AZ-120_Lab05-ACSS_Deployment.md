@@ -487,8 +487,8 @@ lab:
     |虚拟网络|CONTOSO-VNET****|
     |应用程序子网|应用 (10.5.0.0/24)****|
     |数据库子网|数据库 (10.5.2.0/24)****|
-    |应用程序 OS 映像|Red Hat Enterprise Linux 8.2 for SAP Applications - x64 Gen2 最新版****|
-    |数据库 OS 映像|Red Hat Enterprise Linux 8.2 for SAP Applications - x64 Gen2 最新版****|
+    |应用程序 OS 映像|**Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**|
+    |数据库 OS 映像|**Red Hat Enterprise Linux 8.4 for SAP Applications - x64 Gen2 最新版**|
     |SAP 传输选项|创建新的 SAP 传输目录****|
     |传输资源组|ACSS-DEMO****|
     |存储帐户名称|无条目|
