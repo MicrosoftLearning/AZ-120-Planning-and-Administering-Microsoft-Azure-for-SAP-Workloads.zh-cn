@@ -107,7 +107,9 @@ lab:
 
     > **注意**：如果部署失败并出现包括语句 `PowerShell DSC resource MSFT_xADDomainController failed to execute Set-TargetResource functionality with error message: Domain 'adatum.com' could not be found` 的错误，请使用以下步骤修正此问题：
 
-    - 在 Azure 门户中导航到 **adBDC** VM 的边栏选项卡，在左侧垂直导航菜单的“**设置**”部分中，选择“**扩展 + 应用程序**”，在“**扩展 + 应用程序** ”窗格中，选择“**PrepareBDC**”，然后在“**准备 BDC**”窗格中选择“**卸载**”。 
+    - 在 Azure 门户中，导航到 **adVNET** 的边栏选项卡，在左侧垂直导航菜单的“设置”**** 部分，选择 **DNS 服务器**，在 **adVNET \| DNS 服务器**页上，删除 **10.0.0.5** 项，然后选择“保存”****。
+      
+    - 在 Azure 门户中导航到 **adBDC** VM 的边栏选项卡，在左侧垂直导航菜单的“设置”**** 部分中，选择**扩展 + 应用程序**，在**扩展 + 应用程序**窗格中，选择**PrepareBDC**，然后在**准备 BDC**窗格中选择“卸载”****。 
 
     - 导航回到“**adBDC**”VM 边栏选项卡并重启 Azure VM。
 
